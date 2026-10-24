@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2343563D062915386E3CC78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */; };
+		2A84E4B3F3B6309ED0EE25C6 /* GaniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */; };
+		3FE7C4DB3BA9EB4C294F5443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
+		524B54902CAA1D113248462A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
+		5F97E33A880B6B4FA483005B /* IdolListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6201B0C68EF42E9CBF4B807E /* IdolListing.swift */; };
+		6A6B9D714BA98C72A2415E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
+		76979B6B1ECA538D84CBC2BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418EC00296F1A906E5A676A /* ContentView.swift */; };
+		7B785ABDA9A8938ED0F886C5 /* IdolListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02708385E214EAA88DB5F876 /* IdolListingTests.swift */; };
+		9EEDCC02349ACEDA0502C78B /* GaniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		395283ECC1FC0447B2AD61FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A88F2BBE684D18990DE174D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33B137C2F8CCD2C4EDA9B9DC;
+			remoteInfo = gani;
+		};
+		5E81121B13DB2C833A13ED2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A88F2BBE684D18990DE174D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33B137C2F8CCD2C4EDA9B9DC;
+			remoteInfo = gani;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02708385E214EAA88DB5F876 /* IdolListingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IdolListingTests.swift; sourceTree = "<group>"; };
+		0418EC00296F1A906E5A676A /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GaniApp.swift; sourceTree = "<group>"; };
+		50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6201B0C68EF42E9CBF4B807E /* IdolListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IdolListing.swift; sourceTree = "<group>"; };
+		750B171646ABABA6B4ABA219 /* ganiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ganiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9B47A9C456C8FB9FAFD474 /* gani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gani.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GaniUITests.swift; sourceTree = "<group>"; };
+		B638AFC536D3FD5DB3665C02 /* ganiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ganiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		064F64F35570C19BA33F1156 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524B54902CAA1D113248462A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E85D4B5056FE6711CD35CF46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FE7C4DB3BA9EB4C294F5443 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA66863D550C7B258783DC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A6B9D714BA98C72A2415E59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		079EEA00815A73B2F6D3D212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D9B47A9C456C8FB9FAFD474 /* gani.app */,
+				750B171646ABABA6B4ABA219 /* ganiTests.xctest */,
+				B638AFC536D3FD5DB3665C02 /* ganiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C79246344561E9212DADB38 /* ganiTests */ = {
+			isa = PBXGroup;
+			children = (
+				02708385E214EAA88DB5F876 /* IdolListingTests.swift */,
+			);
+			name = ganiTests;
+			path = ganiTests;
+			sourceTree = "<group>";
+		};
+		3F7BBE76ACCC8AD2D239610C /* gani */ = {
+			isa = PBXGroup;
+			children = (
+				4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */,
+				0418EC00296F1A906E5A676A /* ContentView.swift */,
+				6201B0C68EF42E9CBF4B807E /* IdolListing.swift */,
+				50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */,
+			);
+			name = gani;
+			path = gani;
+			sourceTree = "<group>";
+		};
+		7B82543226B9D6B0DE4E5AB2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */,
+			);
+			name = ganiUITests;
+			path = ganiUITests;
+			sourceTree = "<group>";
+		};
+		AC8B8EE12E737840B5561043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B82543226B9D6B0DE4E5AB2 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8C9A46FA7B95B45F316A1AE = {
+			isa = PBXGroup;
+			children = (
+				079EEA00815A73B2F6D3D212 /* Products */,
+				AC8B8EE12E737840B5561043 /* Frameworks */,
+				3F7BBE76ACCC8AD2D239610C /* gani */,
+				2C79246344561E9212DADB38 /* ganiTests */,
+				9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		33B137C2F8CCD2C4EDA9B9DC /* gani */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 753165E89AC5F77BFB34A5BF /* Build configuration list for PBXNativeTarget "gani" */;
+			buildPhases = (
+				28AD6A7AA520F669D6FCC021 /* Sources */,
+				064F64F35570C19BA33F1156 /* Frameworks */,
+				E4E076C8E6071755A85FF5B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gani;
+			productName = gani;
+			productReference = 9D9B47A9C456C8FB9FAFD474 /* gani.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D199499250EC4C6701CB0A50 /* ganiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B523D5C7CFD036954D3BBDBE /* Build configuration list for PBXNativeTarget "ganiUITests" */;
+			buildPhases = (
+				EA47E2201EE7E6DDD782E5A8 /* Sources */,
+				EBA66863D550C7B258783DC1 /* Frameworks */,
+				FBFAA678ABBC8C350B026E01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66940513CC91EEF867D73F7F /* PBXTargetDependency */,
+			);
+			name = ganiUITests;
+			productName = ganiUITests;
+			productReference = B638AFC536D3FD5DB3665C02 /* ganiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D83C46867FC089D2D695D49F /* ganiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 609DC1B2EFDE86154FAF4C67 /* Build configuration list for PBXNativeTarget "ganiTests" */;
+			buildPhases = (
+				2869619711B0B1FA49A83063 /* Sources */,
+				E85D4B5056FE6711CD35CF46 /* Frameworks */,
+				AE13DD209F1986E73B4174C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDFDF9594FC02393BBE94BE9 /* PBXTargetDependency */,
+			);
+			name = ganiTests;
+			productName = ganiTests;
+			productReference = 750B171646ABABA6B4ABA219 /* ganiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A88F2BBE684D18990DE174D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+			};
+			buildConfigurationList = 29E7434FC40013D83B2F59CC /* Build configuration list for PBXProject "gani" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8C9A46FA7B95B45F316A1AE;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 079EEA00815A73B2F6D3D212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33B137C2F8CCD2C4EDA9B9DC /* gani */,
+				D83C46867FC089D2D695D49F /* ganiTests */,
+				D199499250EC4C6701CB0A50 /* ganiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE13DD209F1986E73B4174C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4E076C8E6071755A85FF5B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2343563D062915386E3CC78D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBFAA678ABBC8C350B026E01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2869619711B0B1FA49A83063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B785ABDA9A8938ED0F886C5 /* IdolListingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28AD6A7AA520F669D6FCC021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A84E4B3F3B6309ED0EE25C6 /* GaniApp.swift in Sources */,
+				76979B6B1ECA538D84CBC2BC /* ContentView.swift in Sources */,
+				5F97E33A880B6B4FA483005B /* IdolListing.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA47E2201EE7E6DDD782E5A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EEDCC02349ACEDA0502C78B /* GaniUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66940513CC91EEF867D73F7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gani;
+			target = 33B137C2F8CCD2C4EDA9B9DC /* gani */;
+			targetProxy = 5E81121B13DB2C833A13ED2C /* PBXContainerItemProxy */;
+		};
+		EDFDF9594FC02393BBE94BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gani;
+			target = 33B137C2F8CCD2C4EDA9B9DC /* gani */;
+			targetProxy = 395283ECC1FC0447B2AD61FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		089B06369E054C47BF4230E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		1D7E6036F3931A0067D7FAC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = gani;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.gani;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23B7768F2EBD883AED880E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.ganiUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gani;
+			};
+			name = Debug;
+		};
+		668BA2E702BC2C96FBCEF1C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.ganiTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gani.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gani";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D09694ED42F8FE23FB776CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.ganiTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gani.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gani";
+			};
+			name = Debug;
+		};
+		8AABE6E6C5D6BFC1B027ED66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = gani;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.gani;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B42FC7803B117BD7C6EF525F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		FFE56462A995DBD3872389F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.ganiUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gani;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29E7434FC40013D83B2F59CC /* Build configuration list for PBXProject "gani" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B42FC7803B117BD7C6EF525F /* Debug */,
+				089B06369E054C47BF4230E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		609DC1B2EFDE86154FAF4C67 /* Build configuration list for PBXNativeTarget "ganiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				668BA2E702BC2C96FBCEF1C1 /* Release */,
+				7D09694ED42F8FE23FB776CE /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		753165E89AC5F77BFB34A5BF /* Build configuration list for PBXNativeTarget "gani" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AABE6E6C5D6BFC1B027ED66 /* Release */,
+				1D7E6036F3931A0067D7FAC3 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B523D5C7CFD036954D3BBDBE /* Build configuration list for PBXNativeTarget "ganiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFE56462A995DBD3872389F9 /* Release */,
+				23B7768F2EBD883AED880E0E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A88F2BBE684D18990DE174D /* Project object */;
+}
