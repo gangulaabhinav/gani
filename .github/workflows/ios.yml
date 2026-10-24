@@ -2,14 +2,21 @@ name: iOS
 
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: ios-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-test:
+    name: Build, unit tests, UI tests
     runs-on: macos-26
     timeout-minutes: 30
     steps:
@@ -44,6 +51,7 @@ jobs:
           xcrun simctl bootstatus "$DEVICE_ID" -b
 
       - name: Build app and tests
+        id: build
         run: |
           xcodebuild build-for-testing \
             -project gani.xcodeproj -scheme gani \
@@ -51,16 +59,32 @@ jobs:
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO
 
-      - name: Install and launch app
-        run: |
-          xcrun simctl install "$DEVICE_ID" build/Build/Products/Debug-iphonesimulator/gani.app
-          xcrun simctl launch "$DEVICE_ID" com.gangulaabhinav.gani
-
-      - name: Run unit and UI tests
+      - name: Run unit tests
         run: |
           xcodebuild test-without-building \
             -project gani.xcodeproj -scheme gani \
             -destination "platform=iOS Simulator,id=$DEVICE_ID" \
             -derivedDataPath build \
-            -resultBundlePath TestResults.xcresult \
+            -only-testing:ganiTests \
+            -resultBundlePath TestResults/UnitTests.xcresult \
             CODE_SIGNING_ALLOWED=NO
+
+      - name: Run UI tests
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: |
+          xcodebuild test-without-building \
+            -project gani.xcodeproj -scheme gani \
+            -destination "platform=iOS Simulator,id=$DEVICE_ID" \
+            -derivedDataPath build \
+            -only-testing:ganiUITests \
+            -resultBundlePath TestResults/UITests.xcresult \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload test results
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-test-results
+          path: TestResults/
+          if-no-files-found: warn
+          retention-days: 7

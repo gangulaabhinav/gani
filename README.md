@@ -39,8 +39,26 @@ Buy and dismissal of the demo notice.
 
 ### Automation and Xcode 27.1
 
-`.github/workflows/ios.yml` builds, installs, launches, and runs both test targets
-on an iPhone simulator for pushes, pull requests, and manual dispatches.
+`.github/workflows/ios.yml` runs for pull requests targeting `main`, pushes to
+`main`, and manual dispatches. Feature-branch pushes do not trigger duplicate
+runs, and newer commits cancel superseded runs on the same PR or branch.
+
+One job exposes the **Build, unit tests, UI tests** PR check with three steps:
+build the app and both test targets once using `build-for-testing`, run
+`ganiTests`, then run `ganiUITests` using `test-without-building`. Both test
+steps reuse the same derived data and selected simulator, avoiding duplicate
+compilation, artifact transfers between runners, and multiple runner setups.
+UI tests launch the app themselves, so no separate install/launch step is needed.
+UI tests still run if unit tests fail; either test failure fails the overall check.
+If the build fails, both test steps are skipped. The `ios-test-results` artifact
+contains separate `.xcresult` bundles for the two suites, retained for seven days.
+This gives one combined PR check, not three independently required checks.
+The repository's active `main` ruleset requires this GitHub Actions check to
+pass and the PR branch to be up to date before merging, with no bypass exceptions.
+Pull requests are required, but reviewer approvals are not. Auto-merge is enabled
+for eligible PRs when requested, and source branches are automatically deleted
+after merging.
+
 It prefers Xcode 27.1 when installed, otherwise logs and uses the `macos-26`
 runner's default Xcode. The official runner image currently lists Xcode 26.6 as
 its default, not 27.1; Xcode 27.1 execution is therefore not yet verified.
