@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 71;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,7 +91,6 @@
 			children = (
 				02708385E214EAA88DB5F876 /* IdolListingTests.swift */,
 			);
-			name = ganiTests;
 			path = ganiTests;
 			sourceTree = "<group>";
 		};
@@ -103,7 +102,6 @@
 				6201B0C68EF42E9CBF4B807E /* IdolListing.swift */,
 				50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */,
 			);
-			name = gani;
 			path = gani;
 			sourceTree = "<group>";
 		};
@@ -120,7 +118,6 @@
 			children = (
 				9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */,
 			);
-			name = ganiUITests;
 			path = ganiUITests;
 			sourceTree = "<group>";
 		};
@@ -217,8 +214,6 @@
 				Base,
 			);
 			mainGroup = D8C9A46FA7B95B45F316A1AE;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 079EEA00815A73B2F6D3D212 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,6 +357,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V8P4GG786Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = gani;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,7 +365,10 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.gani;
 				SDKROOT = iphoneos;
@@ -433,6 +432,7 @@
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V8P4GG786Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = gani;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -440,7 +440,10 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gangulaabhinav.gani;
 				SDKROOT = iphoneos;
