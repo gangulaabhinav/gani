@@ -8,25 +8,19 @@
 import SwiftUI
 
 struct ItemView: View {
-    let sampleItem = ItemDetails(
-        name: "Festival Ganesh idol",
-        price: 1499,
-        imageName: "FestivalIdol"
-    )
+    let item: ItemDetails
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Discover festival idols from your community.")
-                .foregroundStyle(.secondary)
-            Image(sampleItem.imageName)
+            Image(item.imageName)
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .accessibilityLabel("Illustration of a Ganesh idol on a festival pedestal")
                 .accessibilityIdentifier("listingImage")
-            Text(sampleItem.name)
+            Text(item.name)
                 .font(.title2.bold())
-            Text(sampleItem.formattedPrice)
+            Text(item.formattedPrice)
                 .font(.title3)
         }
         .padding()
@@ -36,5 +30,10 @@ struct ItemView: View {
 }
 
 #Preview {
-    ItemView()
+    ItemView(item: ItemDetails(
+        name: "Festival Ganesh idol",
+        price: 1499,
+        imageName: "FestivalIdol"
+    )
+    )
 }
