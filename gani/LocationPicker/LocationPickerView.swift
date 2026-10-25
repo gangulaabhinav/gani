@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-import MapKit
 
 struct LocationPickerView: View {
-    @State var isPresented = false
+    @State private var isPresented = false
     @Binding var selectedLocation: Location
     
     var body: some View {
