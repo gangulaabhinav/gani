@@ -7,15 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2343563D062915386E3CC78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */; };
-		2A84E4B3F3B6309ED0EE25C6 /* GaniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */; };
 		3FE7C4DB3BA9EB4C294F5443 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
 		524B54902CAA1D113248462A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
-		5F97E33A880B6B4FA483005B /* IdolListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6201B0C68EF42E9CBF4B807E /* IdolListing.swift */; };
 		6A6B9D714BA98C72A2415E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */; };
-		76979B6B1ECA538D84CBC2BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0418EC00296F1A906E5A676A /* ContentView.swift */; };
-		7B785ABDA9A8938ED0F886C5 /* IdolListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02708385E214EAA88DB5F876 /* IdolListingTests.swift */; };
-		9EEDCC02349ACEDA0502C78B /* GaniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +30,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02708385E214EAA88DB5F876 /* IdolListingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IdolListingTests.swift; sourceTree = "<group>"; };
-		0418EC00296F1A906E5A676A /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GaniApp.swift; sourceTree = "<group>"; };
-		50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6201B0C68EF42E9CBF4B807E /* IdolListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IdolListing.swift; sourceTree = "<group>"; };
 		750B171646ABABA6B4ABA219 /* ganiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ganiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9B47A9C456C8FB9FAFD474 /* gani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gani.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GaniUITests.swift; sourceTree = "<group>"; };
 		B638AFC536D3FD5DB3665C02 /* ganiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ganiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2C79246344561E9212DADB38 /* ganiTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ganiTests;
+			sourceTree = "<group>";
+		};
+		3F7BBE76ACCC8AD2D239610C /* gani */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = gani;
+			sourceTree = "<group>";
+		};
+		9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = ganiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		064F64F35570C19BA33F1156 /* Frameworks */ = {
@@ -86,39 +104,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2C79246344561E9212DADB38 /* ganiTests */ = {
-			isa = PBXGroup;
-			children = (
-				02708385E214EAA88DB5F876 /* IdolListingTests.swift */,
-			);
-			path = ganiTests;
-			sourceTree = "<group>";
-		};
-		3F7BBE76ACCC8AD2D239610C /* gani */ = {
-			isa = PBXGroup;
-			children = (
-				4047A2B00AE5AEBE11D8A24D /* GaniApp.swift */,
-				0418EC00296F1A906E5A676A /* ContentView.swift */,
-				6201B0C68EF42E9CBF4B807E /* IdolListing.swift */,
-				50B07F3E1B87FC82D80EFD69 /* Assets.xcassets */,
-			);
-			path = gani;
-			sourceTree = "<group>";
-		};
 		7B82543226B9D6B0DE4E5AB2 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				DD2D4A7AF24EAAD85252BAD1 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9F4F2A1E4EE440D97D8B09C3 /* GaniUITests.swift */,
-			);
-			path = ganiUITests;
 			sourceTree = "<group>";
 		};
 		AC8B8EE12E737840B5561043 /* Frameworks */ = {
@@ -155,6 +146,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				3F7BBE76ACCC8AD2D239610C /* gani */,
+			);
 			name = gani;
 			productName = gani;
 			productReference = 9D9B47A9C456C8FB9FAFD474 /* gani.app */;
@@ -173,6 +167,9 @@
 			dependencies = (
 				66940513CC91EEF867D73F7F /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */,
+			);
 			name = ganiUITests;
 			productName = ganiUITests;
 			productReference = B638AFC536D3FD5DB3665C02 /* ganiUITests.xctest */;
@@ -190,6 +187,9 @@
 			);
 			dependencies = (
 				EDFDF9594FC02393BBE94BE9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2C79246344561E9212DADB38 /* ganiTests */,
 			);
 			name = ganiTests;
 			productName = ganiTests;
@@ -237,7 +237,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2343563D062915386E3CC78D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B785ABDA9A8938ED0F886C5 /* IdolListingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,9 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A84E4B3F3B6309ED0EE25C6 /* GaniApp.swift in Sources */,
-				76979B6B1ECA538D84CBC2BC /* ContentView.swift in Sources */,
-				5F97E33A880B6B4FA483005B /* IdolListing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EEDCC02349ACEDA0502C78B /* GaniUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
