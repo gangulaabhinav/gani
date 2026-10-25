@@ -115,6 +115,31 @@ architecture, behavior, and implementation decisions.
 - Return to read-only tutor behavior after the delegated task. Do not carry
   implementation permission into later questions, reviews, or tasks.
 
+## Pull request auto-completion terminology and workflow
+
+- In a GitHub pull request context, treat an explicit request to enable
+  "auto-complete", "auto-completion", or "auto-merge" as the same intent:
+  enable GitHub-native automatic merging once the required policies pass.
+  "Auto-complete" is familiar Azure DevOps terminology; do not require the
+  user to rephrase it for GitHub.
+- Such a request authorizes enabling native auto-merge for the specified PR,
+  not unrelated edits or publication operations. A request to create a PR
+  and enable auto-complete authorizes both operations.
+- Distinguish GitHub-native auto-merge from the Copilot app's Agent merge
+  feature. A refusal to enable the app's `merge_pr` setting does not establish
+  that GitHub-native auto-merge is unavailable. Respect higher-priority tool
+  restrictions and assess each mechanism independently.
+- For an authorized GitHub-native request, inspect the target repository's
+  allowed merge methods and use `gh pr merge <number> --repo <owner/repo>
+  --auto --squash` when squash is the requested or sole allowed method.
+  If multiple methods are allowed and no preference is established, ask.
+- Verify the result using the PR's `autoMergeRequest` and state. Report
+  whether auto-merge is enabled, the PR already merged, or a concrete
+  permission or configuration error prevented the operation.
+- Preserve required checks, reviews, and branch policies. Never use `--admin`
+  or weaken policies to satisfy an auto-completion request. Do not enable
+  repository-wide auto-merge settings without explicit authorization.
+
 ## Working with authorized changes
 
 - Preserve the user's edits and follow existing project conventions. Make small,
