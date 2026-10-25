@@ -2,6 +2,8 @@
 
 Read `.github/copilot-instructions.md` before acting on any repository task.
 It contains the detailed learning-first policy for this repository.
+For iOS work, also read `ios/AGENTS.md`. Platform-specific instructions apply
+only to their platform; keep shared policies here and in `.github/`.
 
 - The user writes the code and owns all design and implementation decisions.
 - Default to read-only explanation, progressive conceptual hints, and review of
