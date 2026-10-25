@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    let sampleItem = ItemDetails(
+        name: "Festival Ganesh idol",
+        price: 1499,
+        imageName: "FestivalIdol"
+    )
+
     var body: some View {
         VStack {
-            ItemView()
+            Text("Discover festival idols from your community.")
+                .foregroundStyle(.secondary)
+            ItemView(item: sampleItem)
             Button("Buy") {
                 
             }
