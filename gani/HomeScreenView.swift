@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    @State private var selectedLocation = Location.None
     let sampleItem = ItemDetails(
         name: "Festival Ganesh idol",
         price: 1499,
@@ -15,7 +16,9 @@ struct HomeScreenView: View {
     )
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            LocationPickerView(selectedLocation: $selectedLocation)
+                .padding(.bottom)
             Text("Discover festival idols from your community.")
                 .foregroundStyle(.secondary)
             ItemView(item: sampleItem)
@@ -23,6 +26,7 @@ struct HomeScreenView: View {
                 
             }
                 .buttonStyle(PrimaryButtonStyle())
+            Spacer()
         }
         .padding()
     }
