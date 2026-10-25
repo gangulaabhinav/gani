@@ -15,11 +15,15 @@ network connection, or third-party app dependencies are required.
 
 ## Requirements
 
-- A Mac with Xcode and an iOS simulator.
+- A Mac with Xcode 16 or later and an iOS simulator.
 - iOS 17 or later on the simulator or device.
 
 The project uses Swift 6, SwiftUI, strict concurrency checking, and the selected
 Xcode's latest SDK.
+
+The app, unit-test, and UI-test targets use file-system-synchronized folders.
+Files inside `gani/`, `ganiTests/`, and `ganiUITests/` are discovered automatically
+by their respective targets, without individual entries in the project file.
 
 ## Run the app
 
