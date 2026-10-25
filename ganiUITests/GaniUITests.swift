@@ -10,31 +10,26 @@ final class GaniUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        XCTAssertTrue(app.navigationBars["gani"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.images["listingImage"].exists)
+        XCTAssertTrue(app.images["listingImage"].waitForExistence(timeout: 10))
+        XCTAssertTrue(app.staticTexts["Discover festival idols from your community."].exists)
         XCTAssertTrue(app.staticTexts["Festival Ganesh idol"].exists)
-        XCTAssertTrue(app.buttons["buyButton"].exists)
+        XCTAssertTrue(app.staticTexts["₹1,499.00"].exists)
+        XCTAssertTrue(app.buttons["Buy"].isHittable)
     }
 
     @MainActor
-    func testBuyShowsDemoNoticeAndCanBeDismissed() {
+    func testPlaceholderBuyLeavesListingVisible() {
         let app = XCUIApplication()
         app.launch()
 
-        let buyButton = app.buttons["buyButton"]
+        let buyButton = app.buttons["Buy"]
         XCTAssertTrue(buyButton.waitForExistence(timeout: 10))
-        if !buyButton.isHittable {
-            app.swipeUp()
-        }
+        XCTAssertTrue(buyButton.isHittable)
         buyButton.tap()
 
-        let notice = app.alerts["Thanks for your interest!"]
-        XCTAssertTrue(notice.waitForExistence(timeout: 5))
-        XCTAssertTrue(notice.staticTexts[
-            "This is a sample app. No order has been placed and no payment has been taken."
-        ].exists)
-        notice.buttons["OK"].tap()
-        XCTAssertFalse(notice.exists)
+        XCTAssertEqual(app.alerts.count, 0)
+        XCTAssertTrue(app.images["listingImage"].exists)
+        XCTAssertTrue(app.staticTexts["Festival Ganesh idol"].exists)
         XCTAssertTrue(buyButton.isHittable)
     }
 }
