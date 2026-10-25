@@ -7,7 +7,7 @@
 
 ## User settings
 xcuserdata/
-gani.xcodeproj/project.xcworkspace/
+ios/gani.xcodeproj/project.xcworkspace/
 DerivedData/
 build/
 *.xcresult
@@ -54,7 +54,7 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-Carthage/Build/
+ios/Carthage/Build/
 
 # fastlane
 #
@@ -63,7 +63,7 @@ Carthage/Build/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots/**/*.png
+ios/fastlane/test_output

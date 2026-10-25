@@ -1,5 +1,7 @@
 # App logo and icon generation
 
+Unless noted otherwise, paths below are relative to the `ios/` directory.
+
 ## Single-source app icon
 
 The editable artwork is the single-path trunk in
@@ -19,7 +21,7 @@ listing illustration is unchanged.
 
 ## Regenerate
 
-Run from the repository root on a Mac with Xcode:
+Run from the `ios/` directory on a Mac with Xcode:
 
 ```sh
 swift scripts/generate-app-icons.swift
@@ -36,6 +38,8 @@ The earlier multi-size PNGs, generator, and Icon Composer sample were saved
 in the local Git stash named `logo-backup-before-single-size-icon` before
 being removed from the working tree. They are not part of the current app.
 Stashes are local and are not included when pushing the branch.
+The following recovery commands run from the repository root and refer to
+historical, pre-`ios/` paths, not the current asset-tooling layout.
 
 To inspect that backup:
 

@@ -1,40 +1,32 @@
 # gani
 
-An iOS app being developed to connect local buyers and sellers of idols for
+An app being developed to connect local buyers and sellers of idols for
 festivals such as Ganesh and Durga.
 
 ## Current app
 
-The app is currently a SwiftUI sample displaying a bundled Ganesh illustration,
-a listing price, and a **Buy** button. Tapping Buy shows a demo notice; it does not
-place an order or collect payment. Buyer and seller marketplace features are
-not yet implemented.
+The current iOS prototype displays a bundled Ganesh illustration, a listing
+price, a city-selection sheet, and a placeholder **Buy** button. It does not
+place orders or collect payments. Buyer and seller marketplace features are not
+yet implemented.
 
 The illustration is original artwork bundled with the app. No image service,
 network connection, or third-party app dependencies are required.
 
-## Requirements
+## Repository layout
 
-- A Mac with Xcode 16 or later and an iOS simulator.
-- iOS 17 or later on the simulator or device.
+- [`ios/`](ios/README.md): iOS app, Xcode project, tests, and asset tooling.
+- `.github/`: shared contribution instructions and CI workflows.
 
-The project uses Swift 6, SwiftUI, strict concurrency checking, and the selected
-Xcode's latest SDK.
+Additional platforms can have their own top-level directories, setup guides,
+and scoped instructions when they are introduced.
 
-The app, unit-test, and UI-test targets use file-system-synchronized folders.
-Files inside `gani/`, `ganiTests/`, and `ganiUITests/` are discovered automatically
-by their respective targets, without individual entries in the project file.
+See the [iOS guide](ios/README.md) for Xcode setup, running the app, tests, and
+asset generation.
 
-## Run the app
+## Contributor guidance
 
-1. Open `gani.xcodeproj` in Xcode.
-2. Select the shared **gani** scheme and an iPhone or iPad simulator.
-3. Run the app with **Product > Run** (⌘R).
-
-For a physical device, choose your own signing team in **Signing & Capabilities**.
-
-## Tests
-
-With the **gani** scheme and an iOS simulator selected, use **Product > Test**
-(⌘U). Unit tests cover the sample listing and rupee formatting. UI tests check
-the listing and image, then exercise the Buy button and demo-notice dismissal.
+Repository-wide learning and permission boundaries are in [AGENTS.md](AGENTS.md)
+and [.github/copilot-instructions.md](.github/copilot-instructions.md).
+Platform-specific guidance belongs with its implementation; iOS guidance is in
+[ios/AGENTS.md](ios/AGENTS.md).
