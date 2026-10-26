@@ -39,7 +39,15 @@ For a physical device, choose your own signing team in **Signing & Capabilities*
 With the **gani** scheme and an iOS simulator selected, use **Product > Test**.
 Unit tests cover item details and Indian rupee formatting. UI tests check the
 listing and image, then verify that the placeholder Buy button leaves the
-listing visible. They do not yet exercise city selection.
+listing visible. They also check the initial None selection, selecting Hyderabad
+and restoring it after an app relaunch, and clearing the selection across
+another relaunch.
+
+The fresh-install test requires an empty app sandbox: use a new simulator or
+uninstall the app before running the suite. Relaunching or rebuilding an
+already-installed app does not clear UserDefaults. The persistence test sets its
+own starting selection through the UI and clears it before finishing; it does
+not reinstall the app between launches. No app-side reset hooks are used.
 
 For command-line tests, start at the repository root and select an available
 simulator name shown by `xcrun simctl list devices available`:
