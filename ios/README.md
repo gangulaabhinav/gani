@@ -14,12 +14,16 @@ picker. The Buy button is a no-op placeholder; no orders or payments are made.
 - `gani/`: application source and bundled asset catalog.
 - `ganiTests/`: XCTest unit tests.
 - `ganiUITests/`: XCTest UI tests.
+- `Shared/`: accessibility identifiers compiled into both the app and UI tests.
 - `gani.xcodeproj/`: Xcode project and shared `gani` scheme.
 - `scripts/`: iOS asset-generation tooling.
 
 The app, unit-test, and UI-test targets use file-system-synchronized folders.
 Files inside `gani/`, `ganiTests/`, and `ganiUITests/` are discovered automatically
 by their respective targets, without individual entries in the project file.
+`Shared/` is also file-system-synchronized and belongs to both the app and
+UI-test targets. Its enum can remain internal because each target compiles the
+same source; UI tests do not import the app executable.
 These paths are relative to this `ios/` directory. Moving the project and its
 three sibling folders together preserves their relative references.
 
@@ -39,7 +43,15 @@ For a physical device, choose your own signing team in **Signing & Capabilities*
 With the **gani** scheme and an iOS simulator selected, use **Product > Test**.
 Unit tests cover item details and Indian rupee formatting. UI tests check the
 listing and image, then verify that the placeholder Buy button leaves the
-listing visible. They do not yet exercise city selection.
+listing visible. They also check the initial None selection, selecting Hyderabad
+and restoring it after an app relaunch, and clearing the selection across
+another relaunch.
+
+The fresh-install test requires an empty app sandbox: use a new simulator or
+uninstall the app before running the suite. Relaunching or rebuilding an
+already-installed app does not clear UserDefaults. The persistence test sets its
+own starting selection through the UI and clears it before finishing; it does
+not reinstall the app between launches. No app-side reset hooks are used.
 
 For command-line tests, start at the repository root and select an available
 simulator name shown by `xcrun simctl list devices available`:

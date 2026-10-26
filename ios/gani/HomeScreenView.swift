@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    @State private var selectedLocation = Location.None
+    @AppStorage(AppStorageKey.selectedLocation.rawValue) private var selectedLocation = Location.None
     let sampleItem = ItemDetails(
         name: "Festival Ganesh idol",
         price: 1499,
