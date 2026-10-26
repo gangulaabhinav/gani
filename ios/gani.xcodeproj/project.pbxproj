@@ -37,9 +37,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		847951BC06E34FCB99030B72 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		2C79246344561E9212DADB38 /* ganiTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ganiTests; sourceTree = "<group>"; };
 		3F7BBE76ACCC8AD2D239610C /* gani */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = gani; sourceTree = "<group>"; };
+		847951BC06E34FCB99030B72 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ganiUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -147,8 +147,8 @@
 				66940513CC91EEF867D73F7F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */,
 				847951BC06E34FCB99030B72 /* Shared */,
+				9FB90147DFEBC2CEF69BBAC7 /* ganiUITests */,
 			);
 			name = ganiUITests;
 			productName = ganiUITests;
