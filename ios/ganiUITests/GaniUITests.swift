@@ -10,8 +10,9 @@ final class GaniUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        XCTAssertTrue(app.buttons["None"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.buttons["None"].isHittable)
+        let locationButton = locationPickerButton(in: app)
+        XCTAssertEqual(locationButton.label, "None")
+        XCTAssertTrue(locationButton.isHittable)
         XCTAssertFalse(app.buttons["Hyderabad"].exists)
     }
 
@@ -54,8 +55,9 @@ final class GaniUITests: XCTestCase {
         app.terminate()
         app.launch()
 
-        XCTAssertTrue(app.buttons["Hyderabad"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.buttons["Hyderabad"].isHittable)
+        let restoredLocationButton = locationPickerButton(in: app)
+        XCTAssertEqual(restoredLocationButton.label, "Hyderabad")
+        XCTAssertTrue(restoredLocationButton.isHittable)
         XCTAssertFalse(app.buttons["None"].exists)
 
         selectLocation("None", in: app)
@@ -63,19 +65,13 @@ final class GaniUITests: XCTestCase {
         app.terminate()
         app.launch()
 
-        XCTAssertTrue(app.buttons["None"].waitForExistence(timeout: 10))
+        XCTAssertEqual(locationPickerButton(in: app).label, "None")
         XCTAssertFalse(app.buttons["Hyderabad"].exists)
     }
 
     @MainActor
     private func selectLocation(_ location: String, in app: XCUIApplication) {
-        let locationButton = app.buttons.matching(
-            NSPredicate(
-                format: "label IN %@",
-                ["None", "Hyderabad", "Bengaluru", "Mumbai", "Kolkata", "Chennai"]
-            )
-        ).firstMatch
-        XCTAssertTrue(locationButton.waitForExistence(timeout: 10))
+        let locationButton = locationPickerButton(in: app)
         if locationButton.label == location {
             return
         }
@@ -91,5 +87,15 @@ final class GaniUITests: XCTestCase {
         )
         wait(for: [sheetDismissed], timeout: 5)
         XCTAssertEqual(locationButton.label, location)
+    }
+
+    @MainActor
+    private func locationPickerButton(in app: XCUIApplication) -> XCUIElement {
+        let buttons = app.buttons.matching(
+            identifier: AccessibilityIdentifier.locationPickerButton.rawValue
+        )
+        XCTAssertTrue(buttons.firstMatch.waitForExistence(timeout: 10))
+        XCTAssertEqual(buttons.count, 1)
+        return buttons.element
     }
 }

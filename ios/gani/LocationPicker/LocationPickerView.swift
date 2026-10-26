@@ -17,6 +17,7 @@ struct LocationPickerView: View {
             Button(selectedLocation.rawValue) {
                 isPresented = true
             }
+            .accessibilityIdentifier(AccessibilityIdentifier.locationPickerButton.rawValue)
         }
         .sheet(isPresented: $isPresented) {
             VStack {
