@@ -71,6 +71,26 @@ The repository's [iOS workflow](../.github/workflows/ios.yml) runs commands
 from `ios/`, builds for testing, and runs both test targets against the same
 derived-data directory. Results are uploaded from `ios/TestResults/`.
 
+### Launch performance in CI
+
+`LaunchPerformanceTests.testLaunchPerformance()` uses XCTest's app-launch metric.
+CI selects the `xcode-27` arm64 runner (currently a GitHub preview image), requires
+Xcode 27.1 build 27A9275 on macOS 27, and creates a fresh iPhone 18 Pro simulator
+with iOS 27.0. Missing versions fail explicitly rather than selecting a different
+toolchain or device. Test execution is serial and uses the scheme's existing
+Debug configuration; these measurements are not a Release-device benchmark.
+
+The runner label does not freeze the image version or reserve identical physical
+hardware. The workflow logs the actual host, OS, and Xcode, and uploads
+`LaunchMetrics.json` and `TestRun.json` alongside the result bundles so that
+measurements and baseline selection can be checked.
+
+XCTest's shared baseline files are stored under
+`gani.xcodeproj/xcshareddata/xcbaselines/`. Baselines compare repeated launch
+measurements with an expected average and regression/variability tolerances;
+they are not an absolute ten-second launch limit. Recollect and verify the CI
+baseline whenever the selected toolchain, simulator, or runner hardware changes.
+
 ## Assets and app icon
 
 Bundled images live in `gani/Assets.xcassets/`. The editable logo is
