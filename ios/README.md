@@ -74,9 +74,9 @@ derived-data directory. Results are uploaded from `ios/TestResults/`.
 ### Launch performance in CI
 
 `LaunchPerformanceTests.testLaunchPerformance()` uses XCTest's app-launch metric.
-CI selects the `xcode-27` arm64 runner (currently a GitHub preview image), requires
-Xcode 27.1 build 27A9275 on macOS 27, and creates a fresh iPhone 18 Pro simulator
-with iOS 27.0. Missing versions fail explicitly rather than selecting a different
+CI selects the `macos-26` arm64 runner, requires
+Xcode 26.6 build 17F113 on macOS 26, and creates a fresh iPhone 17 Pro simulator
+with iOS 26.5. Missing versions fail explicitly rather than selecting a different
 toolchain or device. Test execution is serial and uses the scheme's existing
 Debug configuration; these measurements are not a Release-device benchmark.
 
@@ -84,6 +84,10 @@ The runner label does not freeze the image version or reserve identical physical
 hardware. The workflow logs the actual host, OS, and Xcode, and uploads
 `LaunchMetrics.json` and `TestRun.json` alongside the result bundles so that
 measurements and baseline selection can be checked.
+The workflow fails if the launch test does not produce repeated measurements.
+Two collection attempts on the macOS 27 / Xcode 27.1 preview environment produced
+no app-launch samples despite reporting passing tests, so that environment is
+not used for this baseline.
 
 XCTest's shared baseline files are stored under
 `gani.xcodeproj/xcshareddata/xcbaselines/`. Baselines compare repeated launch

@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build-and-test:
     name: Build, unit tests, UI tests
-    runs-on: xcode-27
+    runs-on: macos-26
     timeout-minutes: 30
     defaults:
       run:
@@ -27,10 +27,10 @@ jobs:
 
       - name: Select Xcode
         run: |
-          sudo xcode-select --switch /Applications/Xcode_27.1.app/Contents/Developer
+          sudo xcode-select --switch /Applications/Xcode_26.6.app/Contents/Developer
           xcodebuild -version
-          test "$(xcodebuild -version)" = "$(printf 'Xcode 27.1\nBuild version 27A9275')"
-          test "$(sw_vers -productVersion | cut -d. -f1)" = "27"
+          test "$(xcodebuild -version)" = "$(printf 'Xcode 26.6\nBuild version 17F113')"
+          test "$(sw_vers -productVersion | cut -d. -f1)" = "26"
           test "$(uname -m)" = "arm64"
           sw_vers
           sysctl hw.model machdep.cpu.brand_string hw.physicalcpu hw.logicalcpu
@@ -38,9 +38,9 @@ jobs:
       - name: Select and boot an iPhone simulator
         run: |
           DEVICE_ID=$(xcrun simctl create \
-            gani-ci-iphone-18-pro \
-            com.apple.CoreSimulator.SimDeviceType.iPhone-18-Pro \
-            com.apple.CoreSimulator.SimRuntime.iOS-27-0)
+            gani-ci-iphone-17-pro \
+            com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro \
+            com.apple.CoreSimulator.SimRuntime.iOS-26-5)
           echo "DEVICE_ID=$DEVICE_ID" >> "$GITHUB_ENV"
           xcrun simctl boot "$DEVICE_ID"
           xcrun simctl bootstatus "$DEVICE_ID" -b
@@ -85,6 +85,34 @@ jobs:
             --path TestResults/UITests.xcresult > TestResults/LaunchMetrics.json
           xcrun xcresulttool get object --legacy --format json \
             --path TestResults/UITests.xcresult > TestResults/TestRun.json
+          python3 - <<'PY'
+          import json
+          import math
+          import statistics
+          from pathlib import Path
+
+          tests = json.loads(Path("TestResults/LaunchMetrics.json").read_text())
+          runs = [
+              run
+              for test in tests
+              if test["testIdentifier"] == "LaunchPerformanceTests/testLaunchPerformance()"
+              for run in test["testRuns"]
+          ]
+          if len(runs) != 1:
+              raise SystemExit("Expected exactly one launch-performance test run")
+          metrics = [
+              metric for metric in runs[0]["metrics"]
+              if metric["identifier"] == "com.apple.dt.XCTMetric_ApplicationLaunch-AppLaunch.duration"
+          ]
+          if len(metrics) != 1:
+              raise SystemExit("App-launch duration metric is missing or ambiguous")
+          samples = metrics[0]["measurements"]
+          if len(samples) < 2 or any(not math.isfinite(value) or value <= 0 for value in samples):
+              raise SystemExit("App-launch metric must contain repeated positive, finite samples")
+          average = statistics.mean(samples)
+          deviation = statistics.stdev(samples) / average * 100
+          print(f"Launch average: {average:.6f}s; relative standard deviation: {deviation:.3f}%")
+          PY
 
       - name: Upload test results
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
