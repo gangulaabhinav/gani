@@ -71,6 +71,48 @@ The repository's [iOS workflow](../.github/workflows/ios.yml) runs commands
 from `ios/`, builds for testing, and runs both test targets against the same
 derived-data directory. Results are uploaded from `ios/TestResults/`.
 
+### Launch performance in CI
+
+`LaunchPerformanceTests.testLaunchPerformance()` uses XCTest's app-launch metric.
+CI selects the `macos-26` arm64 runner, requires
+Xcode 26.6 build 17F113 on macOS 26, and creates a fresh iPhone 17 Pro simulator
+with iOS 26.5. Missing versions fail explicitly rather than selecting a different
+toolchain or device. Test execution is serial and uses the scheme's existing
+Debug configuration; these measurements are not a Release-device benchmark.
+
+The runner label does not freeze the image version or reserve identical physical
+hardware. The workflow logs the actual host, OS, and Xcode, and uploads
+`LaunchMetrics.json` and `TestRun.json` alongside the result bundles so that
+measurements and baseline selection can be checked.
+The workflow fails if the launch test does not produce repeated measurements or
+if XCTest does not apply the committed CI baseline and its configured tolerances.
+Two collection attempts on the macOS 27 / Xcode 27.1 preview environment produced
+no app-launch samples despite reporting passing tests, so that environment is
+not used for this baseline.
+
+XCTest's shared baseline files are stored under
+`gani.xcodeproj/xcshareddata/xcbaselines/`. Baselines compare repeated launch
+measurements with an expected average and regression/variability tolerances;
+they are not an absolute ten-second launch limit. Recollect and verify the CI
+baseline whenever the selected toolchain, simulator, or runner hardware changes.
+
+The CI baseline was collected in
+[run 40644095505](https://github.com/gangulaabhinav/gani/actions/runs/40644095505):
+five samples averaged 3.062435 seconds with 8.72% relative standard deviation.
+The configured variability allowance is 15%, slightly above that observed spread;
+the permitted average regression remains 10%. The separate local baseline is
+preserved. These are initial hosted-runner observations, not a guarantee of
+identical timing between jobs. Each workflow summary reports the measurements
+and confirms which baseline was actually applied.
+
+Baseline enforcement was verified with
+[a passing baseline-selection run](https://github.com/gangulaabhinav/gani/actions/runs/40645280139)
+and [a deliberately failing run](https://github.com/gangulaabhinav/gani/actions/runs/40646199537).
+For the failure experiment only, the baseline was lowered to 0.1 seconds:
+XCTest applied it and rejected the measured 2.626-second average as exceeding
+the 10% regression allowance. The committed baseline is restored to the measured
+3.062435-second value; do not adopt the temporary experiment value.
+
 ## Assets and app icon
 
 Bundled images live in `gani/Assets.xcassets/`. The editable logo is
