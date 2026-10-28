@@ -84,7 +84,8 @@ The runner label does not freeze the image version or reserve identical physical
 hardware. The workflow logs the actual host, OS, and Xcode, and uploads
 `LaunchMetrics.json` and `TestRun.json` alongside the result bundles so that
 measurements and baseline selection can be checked.
-The workflow fails if the launch test does not produce repeated measurements.
+The workflow fails if the launch test does not produce repeated measurements or
+if XCTest does not apply the committed CI baseline and its configured tolerances.
 Two collection attempts on the macOS 27 / Xcode 27.1 preview environment produced
 no app-launch samples despite reporting passing tests, so that environment is
 not used for this baseline.
@@ -94,6 +95,15 @@ XCTest's shared baseline files are stored under
 measurements with an expected average and regression/variability tolerances;
 they are not an absolute ten-second launch limit. Recollect and verify the CI
 baseline whenever the selected toolchain, simulator, or runner hardware changes.
+
+The CI baseline was collected in
+[run 40644095505](https://github.com/gangulaabhinav/gani/actions/runs/40644095505):
+five samples averaged 3.062435 seconds with 8.72% relative standard deviation.
+The configured variability allowance is 15%, slightly above that observed spread;
+the permitted average regression remains 10%. The separate local baseline is
+preserved. These are initial hosted-runner observations, not a guarantee of
+identical timing between jobs. Each workflow summary reports the measurements
+and confirms which baseline was actually applied.
 
 ## Assets and app icon
 
