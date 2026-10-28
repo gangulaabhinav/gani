@@ -105,6 +105,14 @@ preserved. These are initial hosted-runner observations, not a guarantee of
 identical timing between jobs. Each workflow summary reports the measurements
 and confirms which baseline was actually applied.
 
+Baseline enforcement was verified with
+[a passing baseline-selection run](https://github.com/gangulaabhinav/gani/actions/runs/40645280139)
+and [a deliberately failing run](https://github.com/gangulaabhinav/gani/actions/runs/40646199537).
+For the failure experiment only, the baseline was lowered to 0.1 seconds:
+XCTest applied it and rejected the measured 2.626-second average as exceeding
+the 10% regression allowance. The committed baseline is restored to the measured
+3.062435-second value; do not adopt the temporary experiment value.
+
 ## Assets and app icon
 
 Bundled images live in `gani/Assets.xcassets/`. The editable logo is
