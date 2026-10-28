@@ -11,7 +11,7 @@
 				<key>com.apple.dt.XCTMetric_ApplicationLaunch-AppLaunch.duration</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>3.062435</real>
+					<real>0.1</real>
 					<key>baselineIntegrationDisplayName</key>
 					<string>GitHub Actions Xcode 26.6</string>
 					<key>maxPercentRegression</key>
