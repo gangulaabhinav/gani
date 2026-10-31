@@ -71,39 +71,46 @@ The repository's [iOS workflow](../.github/workflows/ios.yml) runs commands
 from `ios/`, builds for testing, and runs both test targets against the same
 derived-data directory. Results are uploaded from `ios/TestResults/`.
 
-### Launch performance in CI
+### Launch performance (local only)
 
 `LaunchPerformanceTests.testLaunchPerformance()` uses XCTest's app-launch metric.
-CI selects the `macos-26` arm64 runner, requires
-Xcode 26.6 build 17F113 on macOS 26, and creates a fresh iPhone 17 Pro simulator
-with iOS 26.5. Missing versions fail explicitly rather than selecting a different
-toolchain or device. Test execution is serial and uses the scheme's existing
-Debug configuration; these measurements are not a Release-device benchmark.
+The iOS workflow excludes this class with
+`-skip-testing:ganiUITests/LaunchPerformanceTests` while continuing to run unit
+tests and functional UI tests. This exclusion applies to pull requests, pushes
+to `main`, and manual workflow runs. Launch-metric export and baseline validation
+are not part of CI, because inconsistent hosted-runner measurements were blocking
+otherwise passing functional tests. Performance is no longer a CI merge gate.
 
-The runner label does not freeze the image version or reserve identical physical
-hardware. The workflow logs the actual host, OS, and Xcode, and uploads
-`LaunchMetrics.json` and `TestRun.json` alongside the result bundles so that
-measurements and baseline selection can be checked.
-The workflow fails if the launch test does not produce repeated measurements or
-if XCTest does not apply the committed CI baseline and its configured tolerances.
-Two collection attempts on the macOS 27 / Xcode 27.1 preview environment produced
-no app-launch samples despite reporting passing tests, so that environment is
-not used for this baseline.
+The test remains in the shared scheme and can be run locally in Xcode or with
+the following command from the repository root (replace the simulator name):
+
+```sh
+xcodebuild test \
+  -project ios/gani.xcodeproj -scheme gani \
+  -destination 'platform=iOS Simulator,name=<available simulator name>' \
+  -only-testing:ganiUITests/LaunchPerformanceTests \
+  -derivedDataPath ios/build \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+The scheme still uses Debug configuration; this is not a Release-device
+benchmark. Check the result bundle for actual launch measurements rather than
+assuming a passing test produced metrics.
 
 XCTest's shared baseline files are stored under
 `gani.xcodeproj/xcshareddata/xcbaselines/`. Baselines compare repeated launch
 measurements with an expected average and regression/variability tolerances;
 they are not an absolute ten-second launch limit. Recollect and verify the CI
-baseline whenever the selected toolchain, simulator, or runner hardware changes.
+baseline whenever the measurement toolchain, simulator, or hardware changes.
 
-The CI baseline was collected in
+The historical CI baseline was collected in
 [run 40644095505](https://github.com/gangulaabhinav/gani/actions/runs/40644095505):
 five samples averaged 3.062435 seconds with 8.72% relative standard deviation.
 The configured variability allowance is 15%, slightly above that observed spread;
 the permitted average regression remains 10%. The separate local baseline is
 preserved. These are initial hosted-runner observations, not a guarantee of
-identical timing between jobs. Each workflow summary reports the measurements
-and confirms which baseline was actually applied.
+identical timing between jobs. The baseline files and their tolerances are
+preserved unchanged, but the workflow no longer enforces them.
 
 Baseline enforcement was verified with
 [a passing baseline-selection run](https://github.com/gangulaabhinav/gani/actions/runs/40645280139)
