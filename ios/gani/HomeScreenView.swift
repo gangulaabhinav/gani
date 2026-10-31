@@ -12,7 +12,7 @@ struct HomeScreenView: View {
     let sampleItem = ItemDetails(
         name: "Festival Ganesh idol",
         price: 1499,
-        images: ["GaneshIdolFront"]
+        images: ["GaneshIdolFront", "GaneshIdolLeftAngle", "GaneshIdolRightAngle", "GaneshIdolLeftSide", "GaneshIdolRightSide"]
     )
 
     var body: some View {
@@ -22,6 +22,7 @@ struct HomeScreenView: View {
             Text("Discover festival idols from your community.")
                 .foregroundStyle(.secondary)
             ItemView(item: sampleItem)
+                .padding([.top, .bottom], 20)
             Button("Buy") {
                 
             }
