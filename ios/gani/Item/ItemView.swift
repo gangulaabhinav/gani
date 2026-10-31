@@ -12,12 +12,16 @@ struct ItemView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Image(item.imageName)
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 24))
-                .accessibilityLabel("Illustration of a Ganesh idol on a festival pedestal")
-                .accessibilityIdentifier("listingImage")
+            HStack {
+                ForEach(item.images, id: \.self) { imageName in
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 24))
+                        .accessibilityLabel("Illustration of a Ganesh idol on a festival pedestal")
+                        .accessibilityIdentifier("listingImage")
+                }
+            }
             Text(item.name)
                 .font(.title2.bold())
             Text(item.formattedPrice)
@@ -33,7 +37,7 @@ struct ItemView: View {
     ItemView(item: ItemDetails(
         name: "Festival Ganesh idol",
         price: 1499,
-        imageName: "FestivalIdol"
+        images: ["GaneshIdolFront", "GaneshIdolLeftAngle", "GaneshIdolRightAngle", "GaneshIdolLeftSide", "GaneshIdolRightSide"]
     )
     )
 }

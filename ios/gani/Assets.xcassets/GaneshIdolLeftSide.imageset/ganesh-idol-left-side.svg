@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#FFF0DC"/>
+  <circle cx="400" cy="270" r="210" fill="#FFD58A"/>
+  <path d="M80 0v95m80-95v55m480-55v55m80-55v95" stroke="#B65C38" stroke-width="6"/>
+  <g fill="#E89039">
+    <circle cx="80" cy="105" r="18"/>
+    <circle cx="160" cy="65" r="18"/>
+    <circle cx="640" cy="65" r="18"/>
+    <circle cx="720" cy="105" r="18"/>
+  </g>
+  <ellipse cx="400" cy="525" rx="200" ry="25" fill="#EBC9A3"/>
+  <path d="M237 469l52-32h274v58l-52 32H237z" fill="#AF4936"/>
+  <path d="M237 469l52-32h274l-52 32z" fill="#DA7445"/>
+  <path d="M511 469l52-32v58l-52 32z" fill="#913D30"/>
+  <path d="M258 447l43-25h238v24l-43 25H258z" fill="#DA7445"/>
+  <path d="M258 447l43-25h238l-43 25z" fill="#ED9965"/>
+  <path d="M438 319q65 31 56 96l-49 33H326q-27-23 2-58l32-37z" fill="#DB8050"/>
+  <path d="M438 335q47 36 39 77" fill="none" stroke="#D77649" stroke-width="15" stroke-linecap="round"/>
+  <path d="M410 151c-52-2-92 42-91 97l-22 29q-8 11 14 18l24 6c-5 33 10 62 45 67 61 8 91-44 82-111-5-62-15-103-52-106z" fill="#EDAA7C"/>
+  <ellipse cx="419" cy="259" rx="59" ry="88" fill="#D77649"/>
+  <ellipse cx="419" cy="259" rx="35" ry="60" fill="#EDAA7C"/>
+  <path d="M319 291c-27 39-45 83-19 106 18 16 40 8 47-13" fill="none" stroke="#EDAA7C" stroke-width="39" stroke-linecap="round"/>
+  <path d="M319 244q14-12 29 1" fill="none" stroke="#633B32" stroke-width="7" stroke-linecap="round"/>
+  <path d="M324 212l8 2m0-17-6 34" stroke="#B44332" stroke-width="6" stroke-linecap="round"/>
+  <path d="M318 174l20-75 24 23 24-57 20 56 28-23 26 72z" fill="#C58A27"/>
+  <path d="M389 120l17 1 28-23 26 72-62 4z" fill="#AB7020"/>
+  <path d="M322 174q67 8 133-4" fill="none" stroke="#F8C75B" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="337" cy="147" rx="8" ry="11" fill="#B44332"/>
+  <path d="M386 362q-11 28-23 44" fill="none" stroke="#EDAA7C" stroke-width="25" stroke-linecap="round"/>
+  <path d="M374 414q-35-3-46 19h93" fill="none" stroke="#EDAA7C" stroke-width="27" stroke-linecap="round"/>
+  <g fill="#F8C75B">
+    <circle cx="280" cy="437" r="12"/>
+    <circle cx="512" cy="424" r="10"/>
+  </g>
+</svg>

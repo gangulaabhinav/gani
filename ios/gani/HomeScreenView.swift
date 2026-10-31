@@ -12,7 +12,7 @@ struct HomeScreenView: View {
     let sampleItem = ItemDetails(
         name: "Festival Ganesh idol",
         price: 1499,
-        imageName: "FestivalIdol"
+        images: ["GaneshIdolFront"]
     )
 
     var body: some View {
